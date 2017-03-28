@@ -1,8 +1,12 @@
+import React from 'react'
 import { expect } from 'chai'
-import { pirate } from '../../../src/components/App'
+import { shallow } from 'enzyme'
 
-describe('App', () => {
-  it(`will say 'Yar Pirate!'`, () => {
-    expect(pirate()).to.equal('Yar Pirate!')
+import App from '../../../src/components/App'
+
+describe('<App />', () => {
+  it(`will say 'Chores Schmores!'`, () => {
+    const app = shallow(<App />)
+    expect(app.find('h1').text()).to.contain('Chores Schmores!')
   })
 })

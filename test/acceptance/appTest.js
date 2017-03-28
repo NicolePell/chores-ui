@@ -3,7 +3,7 @@ module.exports = {
     browser
       .url('http://localhost:8080')
       .waitForElementVisible('body', 100)
-      .assert.containsText('.container', 'Yar Pirate!')
+      .assert.containsText('.container', 'Chores Schmores!')
       .end()
   }
 }

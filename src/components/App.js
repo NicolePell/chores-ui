@@ -1,5 +1,5 @@
-function pirate() {
-  return 'Yar Pirate!'
-}
+import React from 'react'
 
-export { pirate }
+export default function App() {
+  return <h1>Chores Schmores!</h1>
+}
