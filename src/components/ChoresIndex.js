@@ -1,5 +1,13 @@
 import React from 'react'
 
-export default function ChoresIndex() {
-  return <textarea></textarea>
+const ChoresIndex = () => {
+  return (
+    <div>
+      <textarea />
+      <button />
+      <button />
+    </div>
+  )
 }
+
+export default ChoresIndex
