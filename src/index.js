@@ -1,3 +1,13 @@
-import { pirate } from './components/ChoresIndex'
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { pirate } from './components/App'
 
-document.querySelector('.container').innerHTML = pirate()
+const container = document.querySelector('.container').innerHTML = pirate()
+
+render(
+  <Provider>
+    <App />
+  </Provider>,
+  container
+)
