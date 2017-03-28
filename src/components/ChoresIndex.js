@@ -1,5 +1,5 @@
-function pirate() {
-  return 'Yar Pirate!'
-}
+import React from 'react'
 
-export { pirate }
+export default function ChoresIndex() {
+  return <textarea></textarea>
+}
