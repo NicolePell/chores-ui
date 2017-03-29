@@ -1,12 +1,22 @@
 import { expect } from 'chai'
-import { shallow } from 'enzyme'
+import { mount } from 'enzyme'
 import React from 'react'
+import { setupDOM } from '../dom'
 
 import ChoresIndex from '../../../src/components/ChoresIndex'
 
 describe('<ChoresIndex />', () => {
-  it(`will say 'Your Chores'`, () => {
-    const choresIndex = shallow(<ChoresIndex />)
+  let choresIndex
+
+  beforeEach(() => {
+    choresIndex = mount(<ChoresIndex />)
+  })
+
+  it('will say "Your Chores"', () => {
     expect(choresIndex.find('h1').text()).to.contain('Your Chores')
+  })
+
+  it('show the "New Chore Form"', () => {
+    expect(choresIndex.find('.new-chore')).to.exist
   })
 })
