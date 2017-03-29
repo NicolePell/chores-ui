@@ -3,9 +3,7 @@ import React from 'react'
 const ChoresIndex = () => {
   return (
     <div>
-      <textarea />
-      <button />
-      <button />
+      <h1>Your Chores</h1>
     </div>
   )
 }

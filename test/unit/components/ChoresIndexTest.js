@@ -1,14 +1,12 @@
-import React from 'react'
 import { expect } from 'chai'
 import { shallow } from 'enzyme'
+import React from 'react'
 
 import ChoresIndex from '../../../src/components/ChoresIndex'
 
 describe('<ChoresIndex />', () => {
-  it('renders a form', () => {
+  it(`will say 'Your Chores'`, () => {
     const choresIndex = shallow(<ChoresIndex />)
-
-    expect(choresIndex.find('textarea')).to.have.length(1)
-    expect(choresIndex.find('button')).to.have.length(2)
+    expect(choresIndex.find('h1').text()).to.contain('Your Chores')
   })
 })
