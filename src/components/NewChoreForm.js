@@ -2,7 +2,7 @@ import React from 'react'
 
 const NewChoreForm = () => {
   return (
-    <div className="newChore">
+    <div className="new-chore-form">
       <textarea />
       <button />
       <button />
