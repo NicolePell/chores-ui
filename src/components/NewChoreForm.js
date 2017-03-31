@@ -11,18 +11,24 @@ export default class NewChoreForm extends Component {
     this.setState({ chore: event.target.value })
   }
 
+  handleSubmit(event) {
+    event.preventDefault()
+    this.setState({ chore: '' })
+  }
+
   render() {
     return (
       <div className="new-chore">
-        <form className="new-chore__form">
+
+        <form className="new-chore__form" onSubmit={this.handleSubmit.bind(this)} >
           <textarea
-            className="new-chore__form new-chore__input"
+            className="new-chore__input"
             value={this.state.chore}
             onChange={this.handleChange.bind(this)}
           />
-          <button />
-          <a />
+          <button className="save_button" action="submit" />
         </form>
+
       </div>
     )
   }
