@@ -1,9 +1,9 @@
 import { expect } from 'chai'
 import { mount } from 'enzyme'
 import React from 'react'
-import { setupDOM } from '../dom'
+import { setupDOM } from '../helpers/dom'
 
-import ChoresIndex from '../../../src/components/ChoresIndex'
+import ChoresIndex from '../../../src/containers/ChoresIndex'
 
 describe('<ChoresIndex />', () => {
   let choresIndex

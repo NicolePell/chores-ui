@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "test": "mocha --compilers js:babel-core/register --require ./test/unit/setup.js --recursive test/unit/**/*Test.js",
+    "test": "mocha --compilers js:babel-core/register --require ./test/unit/helpers/setup.js --recursive test/unit/**/*Test.js",
     "test:watch": "npm run test -- --watch"
   },
   "author": "NicolePell",
