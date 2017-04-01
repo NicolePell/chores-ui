@@ -3,7 +3,7 @@ import { mount } from 'enzyme'
 import React from 'react'
 import { setupDOM } from '../helpers/dom'
 
-import ChoresIndex from '../../../src/containers/ChoresIndex'
+import ChoresIndex from '../../../src/components/ChoresIndex'
 
 describe('<ChoresIndex />', () => {
   let choresIndex
@@ -18,5 +18,9 @@ describe('<ChoresIndex />', () => {
 
   it('show the "New Chore Form"', () => {
     expect(choresIndex.find('.new-chore')).to.exist
+  })
+
+  it('shows the "Chore List"', () => {
+    expect(choresIndex.find('.chore-list')).to.exist
   })
 })

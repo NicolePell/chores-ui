@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
-import NewChoreForm from '../components/NewChoreForm'
+import NewChoreForm from './NewChoreForm'
+import ChoreList from '../containers/ChoreList'
 
 export default class ChoresIndex extends Component {
   render() {
@@ -8,6 +9,7 @@ export default class ChoresIndex extends Component {
       <div>
         <h1>Your Chores</h1>
         <NewChoreForm />
+        <ChoreList />
       </div>
     )
   }
