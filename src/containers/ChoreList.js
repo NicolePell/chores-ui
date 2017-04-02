@@ -1,9 +1,20 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-const ChoreList = () => {
+export const ChoreList = ({chores}) => {
+  const choreListItems = chores.chores.map(chore => <li key={chore}>{chore}</li>)
   return (
-    <div className="chore-list">Chore List</div>
+    <div className="chore-list">
+      Chore List:
+      <ul>
+        {choreListItems}
+      </ul>
+    </div>
   )
 }
 
-export default ChoreList
+export function mapStateToProps(state) {
+  return { chores: state.chores }
+}
+
+export default connect(mapStateToProps)(ChoreList)
