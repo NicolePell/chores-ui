@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
+import chores from './chores'
+
 const rootReducer = combineReducers({
-  chores: (state = []) => state
+  chores
 });
 
 export default rootReducer;

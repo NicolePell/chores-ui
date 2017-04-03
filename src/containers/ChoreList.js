@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 export const ChoreList = ({chores}) => {
   const choreListItems = chores.chores.map(chore => <li key={chore}>{chore}</li>)
+
   return (
     <div className="chore-list">
       Chore List:
