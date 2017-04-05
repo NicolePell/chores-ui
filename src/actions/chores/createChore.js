@@ -1,8 +1,10 @@
 import { CREATE_CHORE } from '../types/ActionType'
 
-export function createChore(chore) {
+export function createChore(description) {
   return {
     type: CREATE_CHORE,
-    payload: chore
+    payload: {
+      description
+    }
   }
 }
