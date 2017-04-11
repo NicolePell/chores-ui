@@ -9,7 +9,7 @@ export default class ChoresIndex extends Component {
       <div>
         <h1>Your Chores</h1>
         <NewChoreForm />
-        <ChoreList />
+        <ChoreList chores={this.props.chores}/>
       </div>
     )
   }
