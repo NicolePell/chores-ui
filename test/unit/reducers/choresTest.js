@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import choresReducer from '../../../src/reducers/chores'
-import { CREATE_CHORE } from '../../../src/actions/types/ActionType'
+import { CREATE_CHORE, FETCH_ALL_CHORES } from '../../../src/actions/types/ActionType'
 
 describe('reducers/chores', () => {
   it('initialises with an empty object', () => {
@@ -21,5 +21,16 @@ describe('reducers/chores', () => {
     }
 
     expect(choresReducer({}, action)).to.deep.equal(chore)
+  })
+
+  it('returns the chores from the action of type FETCH_ALL_CHORES', () => {
+    const action = { type: FETCH_ALL_CHORES }
+
+    const expectedChores = [
+      { description: 'Prow Scuttle'},
+      { description: 'Swab the deck!'}
+    ]
+
+    expect(choresReducer({}, action)).to.deep.equal(expectedChores)
   })
 })

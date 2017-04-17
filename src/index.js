@@ -6,7 +6,6 @@ import { browserHistory } from 'react-router'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import reducers from './reducers'
-import routes from './routes'
 
 import App from './components/App'
 import ChoresIndex from './components/ChoresIndex'
