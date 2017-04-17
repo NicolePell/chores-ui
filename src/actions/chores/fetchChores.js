@@ -1,7 +1,7 @@
-import { FETCH_ALL_CHORES } from '../types/ActionType'
+import ActionType from '../types/ActionType'
 
 export function fetchAllChores() {
   return {
-    type: FETCH_ALL_CHORES
+    type: ActionType.FETCH_ALL_CHORES
   }
 }

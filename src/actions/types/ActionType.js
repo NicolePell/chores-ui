@@ -1,2 +1,6 @@
-export const CREATE_CHORE = 'create_chore'
-export const FETCH_ALL_CHORES = 'FETCH_ALL_CHORES'
+const ActionType = {
+  FETCH_ALL_CHORES: 'FETCH_ALL_CHORES',
+  CREATE_CHORE: 'CREATE_CHORE'
+}
+
+export default ActionType

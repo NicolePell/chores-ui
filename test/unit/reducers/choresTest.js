@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import choresReducer from '../../../src/reducers/chores'
-import { CREATE_CHORE, FETCH_ALL_CHORES } from '../../../src/actions/types/ActionType'
+import ActionType from '../../../src/actions/types/ActionType'
 
 describe('reducers/chores', () => {
   it('initialises with an empty object', () => {
@@ -14,7 +14,7 @@ describe('reducers/chores', () => {
       description: 'Swab the deck!'
     }
 
-    const action = { type: CREATE_CHORE, payload: chore }
+    const action = { type: ActionType.CREATE_CHORE, payload: chore }
 
     const expectedChore = {
       description: chore
@@ -24,7 +24,7 @@ describe('reducers/chores', () => {
   })
 
   it('returns the chores from the action of type FETCH_ALL_CHORES', () => {
-    const action = { type: FETCH_ALL_CHORES }
+    const action = { type: ActionType.FETCH_ALL_CHORES }
 
     const expectedChores = [
       { description: 'Prow Scuttle'},
