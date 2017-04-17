@@ -2,7 +2,7 @@ import ActionType from '../actions/types/ActionType'
 
 export default function chores(state = {}, action) {
   switch (action.type) {
-    case ActionType.FETCH_ALL_CHORES: {
+    case ActionType.FETCH_ALL_CHORES_START: {
       return [
         { description: 'Prow Scuttle'},
         { description: 'Swab the deck!'}

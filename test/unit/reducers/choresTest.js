@@ -24,7 +24,7 @@ describe('reducers/chores', () => {
   })
 
   it('returns the chores from the action of type FETCH_ALL_CHORES', () => {
-    const action = { type: ActionType.FETCH_ALL_CHORES }
+    const action = { type: ActionType.FETCH_ALL_CHORES_START }
 
     const expectedChores = [
       { description: 'Prow Scuttle'},
