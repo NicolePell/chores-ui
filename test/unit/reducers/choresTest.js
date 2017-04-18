@@ -1,6 +1,7 @@
 import { expect } from 'chai'
 
 import choresReducer from '../../../src/reducers/chores'
+import { fetchAllChoresSuccess, fetchAllChoresStart } from '../../../src/actions/chores/fetchChores'
 import ActionType from '../../../src/actions/types/ActionType'
 
 describe('reducers/chores', () => {
@@ -9,28 +10,31 @@ describe('reducers/chores', () => {
     expect(action).to.be.eql({})
   })
 
-  it('sets the chore from action of type CREATE_CHORE', () => {
-    const chore = {
-      description: 'Swab the deck!'
-    }
+  describe('creating chores', () => {
+    it('sets the chore from action of type CREATE_CHORE', () => {
+      const chore = {
+        description: 'Swab the deck!'
+      }
 
-    const action = { type: ActionType.CREATE_CHORE, payload: chore }
+      const action = { type: ActionType.CREATE_CHORE, payload: chore }
 
-    const expectedChore = {
-      description: chore
-    }
+      const expectedChore = {
+        description: chore
+      }
 
-    expect(choresReducer({}, action)).to.deep.equal(chore)
+      expect(choresReducer({}, action)).to.deep.equal(chore)
+    })
   })
 
-  it('returns the chores from the action of type FETCH_ALL_CHORES', () => {
-    const action = { type: ActionType.FETCH_ALL_CHORES_START }
+  describe('fetching chores', () => {
+    it('sets state initial state on FETCH_ALL_CHORES_START action', () => {
+      const INITIAL_STATE = [
+        { description: 'Prow Scuttle'},
+        { description: 'Swab the deck!'}
+      ]
 
-    const expectedChores = [
-      { description: 'Prow Scuttle'},
-      { description: 'Swab the deck!'}
-    ]
-
-    expect(choresReducer({}, action)).to.deep.equal(expectedChores)
+      expect(
+        choresReducer(INITIAL_STATE, fetchAllChoresStart())).to.be.empty
+    })
   })
 })

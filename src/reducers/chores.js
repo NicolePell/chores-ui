@@ -1,12 +1,11 @@
 import ActionType from '../actions/types/ActionType'
 
-export default function chores(state = {}, action) {
+const initialState = {}
+
+export default function chores(state = initialState, action) {
   switch (action.type) {
     case ActionType.FETCH_ALL_CHORES_START: {
-      return [
-        { description: 'Prow Scuttle'},
-        { description: 'Swab the deck!'}
-      ]
+      return initialState
     }
     case ActionType.CREATE_CHORE: {
       return action.payload
