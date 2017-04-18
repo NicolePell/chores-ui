@@ -6,7 +6,7 @@ export const ChoreList = ({chores}) => {
     return <div>Loading...</div>
   }
 
-  const choreListItems = chores.map(chore => <li key={chore}>{chore}</li>)
+  const choreListItems = chores.map(chore => <li key={chore}>{chore.description}</li>)
 
   return (
     <div className="chore-list">

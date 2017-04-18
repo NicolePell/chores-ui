@@ -6,14 +6,20 @@ import { ChoreList, mapStateToProps } from '../../../src/containers/ChoreList'
 
 describe('<ChoreList />', () => {
   it('has a class name of "chore-list"', () => {
-    const chores = [{ description: 'Prow scuttle' }, { description: 'Sail ho shrouds' }]
+    const chores = [
+      { description: 'Prow scuttle' },
+      { description: 'Sail ho shrouds' }
+    ]
     const choreList = shallow(<ChoreList chores={chores} />)
 
     expect(choreList).to.have.className('chore-list')
   })
 
   it('shows an <li> for each chore', () => {
-    const chores = ['Prow scuttle', 'Sail ho shrouds']
+    const chores = [
+          { description: 'Prow scuttle' },
+          { description: 'Sail ho shrouds' }
+        ]
     const choreList = shallow(<ChoreList chores={chores} />)
 
     expect(choreList).to.contain('Prow scuttle')
