@@ -36,5 +36,16 @@ describe('reducers/chores', () => {
       expect(
         choresReducer(INITIAL_STATE, fetchAllChoresStart())).to.be.empty
     })
+
+    it('sets chores on FETCH_ALL_CHORES_SUCCESS action', () => {
+      const expectedChores = [
+        { description: 'Prow Scuttle'},
+        { description: 'Swab the deck!'}
+      ]
+
+      expect(
+        choresReducer({}, fetchAllChoresSuccess(expectedChores))
+      ).to.deep.equal(expectedChores)
+    })
   })
 })
