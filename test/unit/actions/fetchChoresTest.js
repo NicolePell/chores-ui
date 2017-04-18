@@ -10,30 +10,58 @@ const middlewares = [thunk]
 const mockStore = configureMockStore(middlewares)
 
 describe('actions/chores/fetchChores', () => {
-  it('creates FETCH_ALL_CHORES_START when fetching chores', () => {
-    const chores = [
-      { description: 'Swab the deck!' },
-      { description: 'Sail ho shrouds' }
-    ]
+  afterEach(() => {
+    nock.cleanAll()
+  })
 
-    const request = nock('https://chores-api.com/')
+  describe('success', () => {
+    it('creates FETCH_ALL_CHORES_START when request to fetch chores starts', () => {
+      const chores = [
+        { description: 'Swab the deck!' },
+        { description: 'Sail ho shrouds' }
+      ]
+
+      const request = nock('http://www.chores-api.com/')
       .get('/chores')
-      .reply(200, { body: chores })
+      .reply(200, chores)
 
-    const expectedActions = [
-      { type: ActionType.FETCH_ALL_CHORES_START }
-    ]
+      const expectedActions = [
+        { type: ActionType.FETCH_ALL_CHORES_START }
+      ]
 
-    const store = mockStore({ chores: {} })
+      const store = mockStore({ chores: {} })
 
-    return store.dispatch(fetchAllChores())
+      return store.dispatch(fetchAllChores())
       .then(() => {
         expect(store.getActions()).to.deep.include.members(expectedActions)
       })
-  })
+    })
 
-  it('has the type FETCH_CHORES', () => {
-    const action = fetchAllChores()
-    expect(action.type).to.equal(ActionType.FETCH_ALL_CHORES)
+    it('creates FETCH_ALL_CHORES_SUCCESS when chores have been fetched', () => {
+      const chores = [
+        { description: 'Swab the deck!' },
+        { description: 'Sail ho shrouds' }
+      ]
+
+      const request = nock('http://www.chores-api.com/')
+      .get('/chores')
+      .reply(200, chores)
+
+      const expectedActions = [
+        {
+          type: ActionType.FETCH_ALL_CHORES_SUCCESS,
+          payload: {
+            chores
+          }
+        }
+      ]
+
+      const store = mockStore({ chores: {} })
+
+      return store.dispatch(fetchAllChores())
+        .then(() => {
+          expect(store.getActions()).to.deep.include.members(expectedActions)
+        })
+    })
   })
 })
