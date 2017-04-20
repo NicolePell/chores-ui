@@ -3,7 +3,7 @@ module.exports = {
     browser
       .url('http://localhost:8080/chores')
       .waitForElementVisible('body', 100)
-      .assert.containsText('.container', 'Your Chores')
+      .assert.containsText('#ROOT', 'Your Chores')
       .end()
   }
 }

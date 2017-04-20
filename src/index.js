@@ -11,7 +11,7 @@ import App from './components/App'
 import ChoresIndex from './components/ChoresIndex'
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
-const container = document.querySelector('.container')
+const container = document.getElementById('ROOT')
 
 render(
   <Provider store={createStoreWithMiddleware(reducers)}>
