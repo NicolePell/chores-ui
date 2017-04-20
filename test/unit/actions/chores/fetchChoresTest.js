@@ -3,8 +3,8 @@ import nock from 'nock'
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 
-import { fetchAllChores } from '../../../src/actions/chores/fetchChores'
-import ActionType from '../../../src/actions/types/ActionType'
+import { fetchAllChores } from '../../../../src/actions/chores/fetchChores'
+import ActionType from '../../../../src/actions/types/ActionType'
 
 const middlewares = [thunk]
 const mockStore = configureMockStore(middlewares)
