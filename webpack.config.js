@@ -1,9 +1,16 @@
+const path = require('path')
+
+const sourceRoot = path.resolve('./src')
+const outputRoot = path.resolve('./build')
+
 module.exports = {
+  target: 'web',
+  context: sourceRoot,
   entry: [
-    './src/index.js'
+    './index.js'
   ],
   output: {
-    path: __dirname,
+    path: outputRoot,
     publicPath: '/',
     filename: 'bundle.js'
   },
