@@ -2,7 +2,7 @@ import { expect } from 'chai'
 import { shallow } from 'enzyme'
 import React from 'react'
 
-import NewChoreForm from '../../../src/components/NewChoreForm'
+import NewChoreForm from '~/components/NewChoreForm'
 
 describe('<NewChoreForm />', () => {
   let newChoreForm

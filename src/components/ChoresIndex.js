@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import NewChoreForm from './NewChoreForm'
-import ChoreList from '../containers/ChoreList'
+import NewChoreForm from '~/components/NewChoreForm'
+import ChoreList from '~/containers/ChoreList'
 
 export default class ChoresIndex extends Component {
   render() {

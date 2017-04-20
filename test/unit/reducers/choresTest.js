@@ -1,8 +1,8 @@
 import { expect } from 'chai'
 
-import choresReducer from '../../../src/reducers/chores'
-import { fetchAllChoresSuccess, fetchAllChoresStart } from '../../../src/actions/chores/fetchChores'
-import ActionType from '../../../src/actions/types/ActionType'
+import choresReducer from '~/reducers/chores'
+import { fetchAllChoresSuccess, fetchAllChoresStart } from '~/actions/chores/fetchChores'
+import ActionType from '~/actions/types/ActionType'
 
 describe('reducers/chores', () => {
   it('initialises with an empty object', () => {

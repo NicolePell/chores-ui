@@ -1,4 +1,4 @@
-import { CREATE_CHORE } from '../types/ActionType'
+import { CREATE_CHORE } from '~/actions/types/ActionType'
 
 export function createChore(description) {
   return {

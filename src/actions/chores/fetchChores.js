@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch'
-import ActionType from '../types/ActionType'
+import ActionType from '~/actions/types/ActionType'
 
 export function fetchAllChores() {
   return dispatch => {

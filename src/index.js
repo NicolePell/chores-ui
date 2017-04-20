@@ -5,10 +5,10 @@ import { createStore, applyMiddleware } from 'redux'
 import { browserHistory } from 'react-router'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import reducers from './reducers'
+import reducers from '~/reducers'
 
-import App from './components/App'
-import ChoresIndex from './components/ChoresIndex'
+import App from '~/components/App'
+import ChoresIndex from '~/components/ChoresIndex'
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 const container = document.getElementById('ROOT')
