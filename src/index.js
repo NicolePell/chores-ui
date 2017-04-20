@@ -14,7 +14,7 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 const container = document.getElementById('ROOT')
 
 render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
+  <Provider store={createStoreWithMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>
     <Router history={browserHistory}>
       <div>
         <Route exact path='/' component={App} />
