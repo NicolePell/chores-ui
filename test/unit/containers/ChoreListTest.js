@@ -27,18 +27,13 @@ describe('<ChoreList />', () => {
   })
 
   it('maps chores from state to <ChoreList />', () => {
-    const chores = [
-      { description: 'Prow Scuttle'},
-      { description: 'Swab the deck!'}
-    ]
-    const choreList = shallow(<ChoreList chores={chores} />)
     const state = {
       chores: [
-        { description: 'Prow Scuttle'},
-        { description: 'Swab the deck!'}
-      ]
+          { description: 'Prow Scuttle'},
+          { description: 'Swab the deck!'}
+        ]
     }
     const result = mapStateToProps(state)
-    expect(result).to.equal(state.chores)
+    expect(result.chores).to.equal(state.chores)
   })
 })

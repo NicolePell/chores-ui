@@ -1,11 +1,11 @@
 import ActionType from '~/actions/types/ActionType'
 
-const initialState = {}
+const INITIAL_STATE = {}
 
-export default function chores(state = initialState, action) {
+export default function chores(state = INITIAL_STATE, action) {
   switch (action.type) {
     case ActionType.FETCH_ALL_CHORES_START: {
-      return initialState
+      return INITIAL_STATE
     }
     case ActionType.FETCH_ALL_CHORES_SUCCESS: {
       return action.payload.chores

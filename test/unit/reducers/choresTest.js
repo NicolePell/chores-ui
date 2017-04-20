@@ -39,10 +39,10 @@ describe('reducers/chores', () => {
 
     it('sets chores on FETCH_ALL_CHORES_SUCCESS action', () => {
       const expectedChores = [
-        { description: 'Prow Scuttle'},
-        { description: 'Swab the deck!'}
+        { description: 'Swab the deck!' },
+        { description: 'Sail ho shrouds' }
       ]
-
+      
       expect(
         choresReducer({}, fetchAllChoresSuccess(expectedChores))
       ).to.deep.equal(expectedChores)
