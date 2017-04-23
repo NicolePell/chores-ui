@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "start:api": "json-server --watch db.json --port 8082",
     "test": "mocha --compilers js:babel-core/register --require ./test/unit/helpers/setup.js --recursive ./test/unit/ -name '*Test.js*'",
     "test:watch": "npm run test -- --watch"
   },
@@ -21,6 +22,7 @@
     "enzyme": "^2.8.0",
     "jquery": "^3.2.0",
     "jsdom": "^9.12.0",
+    "json-server": "^0.9.6",
     "mocha": "^3.2.0",
     "nightwatch": "^0.9.13",
     "nock": "^9.0.13",

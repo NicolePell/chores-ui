@@ -1,0 +1,16 @@
+{
+  "chores": [
+    {
+      "id": 1,
+      "description": "Swab the deck!"
+    },
+    {
+      "id": 2,
+      "description": "Prow Scuttle"
+    },
+    {
+      "id": 3,
+      "description": "Sail ho shrouds"
+    }
+  ]
+}
