@@ -1,14 +1,19 @@
 import fetch from 'isomorphic-fetch'
+
+import config from '~/../config/environments'
 import ActionType from '~/actions/types/ActionType'
+
+const url = config[process.env.NODE_ENV].api + '/chores'
 
 export function fetchChores() {
   return dispatch => {
     dispatch(fetchChoresStart())
 
-    return fetch('http://www.chores-api.com/chores')
+    return fetch(url)
       .then(response => {
-        return response.json()
-          .then(chores => dispatch(fetchChoresSuccess(chores)))
+          return response.json()
+            .then(chores => dispatch(fetchChoresSuccess(chores)))
+            .catch(err => console.log(err))
       })
   }
 }

@@ -1,12 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import isEmpty from 'lodash/isEmpty'
 
-export const ChoreList = ({ chores }) => {
+import { fetchChores } from '~/actions/chores/fetchChores'
+
+export const ChoreList = ({ chores, actions }) => {
   if (isEmpty(chores)) {
+    actions.fetchChores()
     return <div>Loading...</div>
   }
-
+  
   const choreList = chores.map(chore => <li key={chore.description}>{chore.description}</li>)
 
   return (
@@ -25,4 +29,10 @@ export function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(ChoreList)
+export function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators({ fetchChores }, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChoreList)

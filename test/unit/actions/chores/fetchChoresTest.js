@@ -21,9 +21,9 @@ describe('actions/chores/fetchChores', () => {
         { description: 'Sail ho shrouds' }
       ]
 
-      const request = nock('http://www.chores-api.com/')
-      .get('/chores')
-      .reply(200, chores)
+      const request = nock('http://www.example.com')
+        .get('/chores')
+        .reply(200, chores)
 
       const expectedActions = [
         { type: ActionType.FETCH_CHORES_START }
@@ -39,13 +39,23 @@ describe('actions/chores/fetchChores', () => {
 
     it('creates FETCH_CHORES_SUCCESS when chores have been fetched', () => {
       const chores = [
-        { description: 'Swab the deck!' },
-        { description: 'Sail ho shrouds' }
-      ]
+          {
+            "id": 1,
+            "description": "Swab the deck!"
+          },
+          {
+            "id": 2,
+            "description": "Prow Scuttle"
+          },
+          {
+            "id": 3,
+            "description": "Sail ho shrouds"
+          }
+        ]
 
-      const request = nock('http://www.chores-api.com/')
-      .get('/chores')
-      .reply(200, chores)
+      const request = nock('http://www.example.com')
+        .get('/chores')
+        .reply(200, chores)
 
       const expectedActions = [
         {
@@ -59,9 +69,9 @@ describe('actions/chores/fetchChores', () => {
       const store = mockStore({ chores: {} })
 
       return store.dispatch(fetchChores())
-        .then(() => {
-          expect(store.getActions()).to.deep.include.members(expectedActions)
-        })
+      .then(() => {
+        expect(store.getActions()).to.deep.include.members(expectedActions)
+      })
     })
   })
 })

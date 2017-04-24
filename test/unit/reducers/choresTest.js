@@ -27,7 +27,7 @@ describe('reducers/chores', () => {
   })
 
   describe('fetching chores', () => {
-    it('sets state initial state on FETCH_CHORES_START action', () => {
+    it('sets initial state on FETCH_CHORES_START action', () => {
       const INITIAL_STATE = [
         { description: 'Prow Scuttle'},
         { description: 'Swab the deck!'}
