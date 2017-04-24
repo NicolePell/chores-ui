@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const path = require('path')
 
 const sourceRoot = path.resolve('./src')
@@ -23,6 +24,11 @@ module.exports = {
       }
     }]
   },
+  plugins: [
+    new webpack.EnvironmentPlugin([
+      'NODE_ENV'
+    ])
+  ],
   resolve: {
     extensions: ['', '.js', '.jsx']
   },

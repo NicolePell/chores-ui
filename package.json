@@ -4,7 +4,7 @@
   "description": "Chores Schmores",
   "main": "index.js",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "start": "NODE_ENV=dev node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "start:api": "json-server --watch db.json --port 8082",
     "test": "mocha --compilers js:babel-core/register --require ./test/unit/helpers/setup.js --recursive ./test/unit/ -name '*Test.js*'",
     "test:watch": "npm run test -- --watch"
