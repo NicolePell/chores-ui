@@ -3,7 +3,7 @@ import nock from 'nock'
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 
-import { fetchAllChores } from '~/actions/chores/fetchChores'
+import { fetchChores } from '~/actions/chores/fetchChores'
 import ActionType from '~/actions/types/ActionType'
 
 const middlewares = [thunk]
@@ -15,7 +15,7 @@ describe('actions/chores/fetchChores', () => {
   })
 
   describe('success', () => {
-    it('creates FETCH_ALL_CHORES_START when request to fetch chores starts', () => {
+    it('creates FETCH_CHORES_START when request to fetch chores starts', () => {
       const chores = [
         { description: 'Swab the deck!' },
         { description: 'Sail ho shrouds' }
@@ -26,18 +26,18 @@ describe('actions/chores/fetchChores', () => {
       .reply(200, chores)
 
       const expectedActions = [
-        { type: ActionType.FETCH_ALL_CHORES_START }
+        { type: ActionType.FETCH_CHORES_START }
       ]
 
       const store = mockStore({ chores: {} })
 
-      return store.dispatch(fetchAllChores())
+      return store.dispatch(fetchChores())
       .then(() => {
         expect(store.getActions()).to.deep.include.members(expectedActions)
       })
     })
 
-    it('creates FETCH_ALL_CHORES_SUCCESS when chores have been fetched', () => {
+    it('creates FETCH_CHORES_SUCCESS when chores have been fetched', () => {
       const chores = [
         { description: 'Swab the deck!' },
         { description: 'Sail ho shrouds' }
@@ -49,7 +49,7 @@ describe('actions/chores/fetchChores', () => {
 
       const expectedActions = [
         {
-          type: ActionType.FETCH_ALL_CHORES_SUCCESS,
+          type: ActionType.FETCH_CHORES_SUCCESS,
           payload: {
             chores
           }
@@ -58,7 +58,7 @@ describe('actions/chores/fetchChores', () => {
 
       const store = mockStore({ chores: {} })
 
-      return store.dispatch(fetchAllChores())
+      return store.dispatch(fetchChores())
         .then(() => {
           expect(store.getActions()).to.deep.include.members(expectedActions)
         })

@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import choresReducer from '~/reducers/chores'
-import { fetchAllChoresSuccess, fetchAllChoresStart } from '~/actions/chores/fetchChores'
+import { fetchChoresSuccess, fetchChoresStart } from '~/actions/chores/fetchChores'
 import ActionType from '~/actions/types/ActionType'
 
 describe('reducers/chores', () => {
@@ -27,24 +27,24 @@ describe('reducers/chores', () => {
   })
 
   describe('fetching chores', () => {
-    it('sets state initial state on FETCH_ALL_CHORES_START action', () => {
+    it('sets state initial state on FETCH_CHORES_START action', () => {
       const INITIAL_STATE = [
         { description: 'Prow Scuttle'},
         { description: 'Swab the deck!'}
       ]
 
       expect(
-        choresReducer(INITIAL_STATE, fetchAllChoresStart())).to.be.empty
+        choresReducer(INITIAL_STATE, fetchChoresStart())).to.be.empty
     })
 
-    it('sets chores on FETCH_ALL_CHORES_SUCCESS action', () => {
+    it('sets chores on FETCH_CHORES_SUCCESS action', () => {
       const expectedChores = [
         { description: 'Swab the deck!' },
         { description: 'Sail ho shrouds' }
       ]
       
       expect(
-        choresReducer({}, fetchAllChoresSuccess(expectedChores))
+        choresReducer({}, fetchChoresSuccess(expectedChores))
       ).to.deep.equal(expectedChores)
     })
   })

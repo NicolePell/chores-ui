@@ -4,10 +4,10 @@ const INITIAL_STATE = {}
 
 export default function chores(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case ActionType.FETCH_ALL_CHORES_START: {
+    case ActionType.FETCH_CHORES_START: {
       return INITIAL_STATE
     }
-    case ActionType.FETCH_ALL_CHORES_SUCCESS: {
+    case ActionType.FETCH_CHORES_SUCCESS: {
       return action.payload.chores
     }
     case ActionType.CREATE_CHORE: {

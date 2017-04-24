@@ -1,27 +1,27 @@
 import fetch from 'isomorphic-fetch'
 import ActionType from '~/actions/types/ActionType'
 
-export function fetchAllChores() {
+export function fetchChores() {
   return dispatch => {
-    dispatch(fetchAllChoresStart())
+    dispatch(fetchChoresStart())
 
     return fetch('http://www.chores-api.com/chores')
       .then(response => {
         return response.json()
-          .then(chores => dispatch(fetchAllChoresSuccess(chores)))
+          .then(chores => dispatch(fetchChoresSuccess(chores)))
       })
   }
 }
 
-export function fetchAllChoresStart() {
+export function fetchChoresStart() {
   return {
-    type: ActionType.FETCH_ALL_CHORES_START
+    type: ActionType.FETCH_CHORES_START
   }
 }
 
-export function fetchAllChoresSuccess(chores) {
+export function fetchChoresSuccess(chores) {
   return {
-    type: ActionType.FETCH_ALL_CHORES_SUCCESS,
+    type: ActionType.FETCH_CHORES_SUCCESS,
     payload: {
       chores
     }
