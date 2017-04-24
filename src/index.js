@@ -1,20 +1,22 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from 'redux'
 import { browserHistory } from 'react-router'
+import { createStore, applyMiddleware, compose } from 'redux'
+import thunk from 'redux-thunk'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import reducers from '~/reducers'
+import reducer from '~/reducers'
 
 import App from '~/components/App'
 import ChoresIndex from '~/components/ChoresIndex'
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
 const container = document.getElementById('ROOT')
 
 render(
-  <Provider store={createStoreWithMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>
+  <Provider store={store}>
     <Router history={browserHistory}>
       <div>
         <Route exact path='/' component={App} />
