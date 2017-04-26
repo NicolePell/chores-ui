@@ -16,13 +16,23 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [{
-      exclude: /node_modules/,
-      loader: 'babel',
-      query: {
-        presets: ['react', 'es2015', 'stage-1']
+    rules: [
+      {
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'es2015', 'stage-1']
+        }
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          { loader: 'style-loader'},
+          { loader: 'css-loader'},
+          { loader: 'sass-loader'}
+        ]
       }
-    }]
+    ]
   },
   plugins: [
     new webpack.EnvironmentPlugin([
@@ -30,7 +40,7 @@ module.exports = {
     ])
   ],
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['.js', '.jsx']
   },
   devServer: {
     historyApiFallback: true,

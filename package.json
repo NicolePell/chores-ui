@@ -19,6 +19,7 @@
     "babel-preset-react": "^6.23.0",
     "chai": "^3.5.0",
     "chai-enzyme": "^0.6.1",
+    "css-loader": "^0.28.0",
     "enzyme": "^2.8.0",
     "jquery": "^3.2.0",
     "jsdom": "^9.12.0",
@@ -26,11 +27,14 @@
     "mocha": "^3.2.0",
     "nightwatch": "^0.9.13",
     "nock": "^9.0.13",
+    "node-sass": "^4.5.2",
     "react-addons-test-utils": "^15.4.2",
     "redux-mock-store": "^1.2.2",
     "redux-thunk": "^2.2.0",
-    "webpack": "^2.1.0-beta.22",
-    "webpack-dev-server": "^2.1.0-beta.10"
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.22.0",
