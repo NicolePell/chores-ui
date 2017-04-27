@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropType from 'prop-types'
 
 export default class NewChoreForm extends Component {
   constructor(props) {
@@ -17,6 +18,8 @@ export default class NewChoreForm extends Component {
   }
 
   render() {
+    const { chore } = this.props
+
     return (
       <div className="new-chore">
         <form className="new_chore new-chore__form" onSubmit={this.handleSubmit.bind(this)} >
@@ -30,4 +33,8 @@ export default class NewChoreForm extends Component {
       </div>
     )
   }
+}
+
+NewChoreForm.proptypes = {
+  chores: PropType.string
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import isEmpty from 'lodash/isEmpty'
+import PropType from 'prop-types'
 
 import { fetchChores } from '~/actions/chores/fetchChores'
 
@@ -21,6 +22,11 @@ export const ChoreList = ({ chores, actions }) => {
       </ul>
     </div>
   )
+}
+
+ChoreList.proptypes = {
+  chores: PropType.array,
+  actions: PropType.object
 }
 
 export function mapStateToProps(state) {
