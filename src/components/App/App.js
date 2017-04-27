@@ -1,9 +1,14 @@
 import React from 'react'
 
+import styles from './App.scss'
 
 export const App = ({ children }) => (
   <div>
-    <h1>Chores Schmores!</h1>
+    <header className="top">
+      <nav>
+        <h1>Chores Schmores!</h1>
+      </nav>
+    </header>
     {children}
   </div>
 )

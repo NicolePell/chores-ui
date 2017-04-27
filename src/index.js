@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import reducer from '~/reducers'
 
-import App from '~/components/App'
+import App from '~/components/App/App'
 import ChoresIndex from '~/components/ChoresIndex'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
