@@ -1,14 +1,14 @@
 import { expect } from 'chai'
 import { mount, shallow } from 'enzyme'
 import React from 'react'
-import { setupDOM } from '../helpers/dom'
+import { setupDOM } from '~/../test/helpers/dom'
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 
-import ChoresIndex from '~/components/ChoresIndex'
-import ChoreList from '~/containers/ChoreList'
-import NewChoreForm from '~/components/NewChoreForm'
+import ChoresIndex from '~/components/Chores/ChoresIndex'
+import ChoreList from '~/components/Chores/ChoreList'
+import NewChoreForm from '~/components/Chores/NewChoreForm'
 
 const middlewares = [thunk]
 const mockStore = configureMockStore(middlewares)

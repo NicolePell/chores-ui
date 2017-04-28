@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 
 import PropTypes from 'prop-types'
 
-import NewChoreForm from '~/components/NewChoreForm'
-import ChoreList from '~/containers/ChoreList'
+import NewChoreForm from './NewChoreForm'
+import ChoreList from './ChoreList'
 
 export default class ChoresIndex extends Component {
   render() {

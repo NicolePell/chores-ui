@@ -2,7 +2,7 @@ import { expect } from 'chai'
 import { shallow } from 'enzyme'
 import React from 'react'
 
-import { ChoreList, mapStateToProps } from '~/containers/ChoreList'
+import { ChoreList, mapStateToProps } from './ChoreList'
 
 describe('<ChoreList />', () => {
   it('has a class name of "chore-list"', () => {

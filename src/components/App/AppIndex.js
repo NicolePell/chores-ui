@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import styles from './App.scss'
 
-export const App = ({ children }) => (
+export const AppIndex = ({ children }) => (
   <div>
     <header className="top">
       <nav>
@@ -14,8 +14,8 @@ export const App = ({ children }) => (
   </div>
 )
 
-App.propTypes = {
+AppIndex.propTypes = {
   children: PropTypes.node
 }
 
-export default App
+export default AppIndex

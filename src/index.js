@@ -8,8 +8,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import reducer from '~/reducers'
 
-import App from '~/components/App/App'
-import ChoresIndex from '~/components/ChoresIndex'
+import AppIndex from '~/components/App/AppIndex'
+import ChoresIndex from '~/components/Chores/ChoresIndex'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
@@ -19,7 +19,7 @@ render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <div>
-        <Route exact path='/' component={App} />
+        <Route exact path='/' component={AppIndex} />
         <Route path='/chores' component={ChoresIndex} />
       </div>
     </Router>
