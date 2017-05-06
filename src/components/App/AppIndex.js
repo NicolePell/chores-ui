@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 import styles from './App.scss'
 
 export const AppIndex = ({ children }) => (
-  <div>
-    <header className="top">
+  <div className="AppIndex">
+    <header>
       <nav>
         <h1>Chores Schmores!</h1>
       </nav>

@@ -15,8 +15,7 @@ export const ChoreList = ({ chores, actions }) => {
   const choreList = chores.map(chore => <li key={chore.description}>{chore.description}</li>)
 
   return (
-    <div className="chore-list">
-      Chore List:
+    <div className="ChoreList">
       <ul>
         {choreList}
       </ul>
