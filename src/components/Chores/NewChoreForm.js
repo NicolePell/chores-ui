@@ -22,12 +22,21 @@ export default class NewChoreForm extends Component {
 
     return (
       <div className="NewChoreForm">
-        <form onSubmit={this.handleSubmit.bind(this)}>
+        <form 
+          className="NewChoreForm__form"
+          onSubmit={this.handleSubmit.bind(this)}
+        >
           <textarea
+            className="NewChoreForm__input"
             value={this.state.chore}
             onChange={this.handleChange.bind(this)}
           />
-          <button action="submit">Add</button>
+          <button 
+            className="NewChoreForm__button"
+            action="submit"
+          >
+            Add
+          </button>
         </form>
       </div>
     )
