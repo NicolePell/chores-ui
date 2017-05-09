@@ -28,6 +28,7 @@ export default class NewChoreForm extends Component {
         >
           <textarea
             className="NewChoreForm__input"
+            placeholder="Add a chore..."
             value={this.state.chore}
             onChange={this.handleChange.bind(this)}
           />

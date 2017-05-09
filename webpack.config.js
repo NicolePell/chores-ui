@@ -38,6 +38,18 @@ module.exports = {
           { loader: 'css-loader'},
           { loader: 'sass-loader'}
         ]
+      },
+      {
+        test: /\.(jpg|gif|png|svg|ico)(\?.*)?$/,
+        use: [
+          { loader: 'file-loader'}
+        ]
+      },
+      {
+        test: /\.(eot|ttf|woff|woff2)(\?.*)?$/,
+        use: [
+          { loader: 'file-loader'}
+        ]
       }
     ]
   },

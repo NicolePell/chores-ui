@@ -1,12 +1,68 @@
 @import "../../variables.scss";
 
 .ChoresIndex {
-  background-color: $primary-pink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
 }
 
 .NewChoreForm {
+  background-color: white;
+  opacity: 0.8;
+  width: 80%;
+}
+
+.NewChoreForm__form {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+
+.NewChoreForm__input {
+  background-color: transparent;
+  border-color: transparent;
+  width: 80%;
+  resize: none;
+  font: $font-stack;
+  font-size: 0.8em;
+  padding: 5px;
+  margin: 10px;
+}
+
+.NewChoreForm__input::placeholder {
+  color: gray;
+}
+
+.NewChoreForm__button {
+  margin: 10px;
 }
 
 .ChoreList {
+  background-color: white;
+  opacity: 0.8;
+  box-shadow: 0 4px 3px lightgray; 
+  width: 80%;
+}
+
+.ChoreList__list {
+  flex: 1 1 auto;
+  list-style: none;
+}
+
+.ChoreList_list-item {
+  background-color: $primary-green;
+  box-shadow: 2px 3px 2px lightgray; 
+  margin: 15px 25px 15px -5px;
+  height: 40px;
+  padding: 12px;
+}
+
+.ChoreList_list-item-checkbox {
+  display: inline-block;
+  padding: 0.5em;
+}
+
+.ChoreList__list-item-description {
+  display: inline-block;
 }

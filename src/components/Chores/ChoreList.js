@@ -12,11 +12,24 @@ export const ChoreList = ({ chores, actions }) => {
     return <div>Loading...</div>
   }
   
-  const choreList = chores.map(chore => <li key={chore.description}>{chore.description}</li>)
+  const choreList = chores.map(chore => (
+    <li 
+      key={chore.description}
+      className="ChoreList_list-item">
+      <div className="ChoreList_list-item-checkbox">
+        <i className="fa fa-square-o" aria-hidden="true"></i>
+      </div>
+      <div className="ChoreList__list-item-description">
+        <p className="ChoreList__list-item-description-text">
+          {chore.description}
+        </p>
+      </div>
+    </li>
+  ))
 
   return (
     <div className="ChoreList">
-      <ul>
+      <ul className="ChoreList__list">
         {choreList}
       </ul>
     </div>
