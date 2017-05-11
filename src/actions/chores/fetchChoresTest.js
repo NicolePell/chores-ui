@@ -21,7 +21,7 @@ describe('actions/chores/fetchChores', () => {
         { description: 'Sail ho shrouds' }
       ]
 
-      const request = nock('http://www.example.com')
+      nock('http://localhost:8082')
         .get('/chores')
         .reply(200, chores)
 
@@ -39,21 +39,11 @@ describe('actions/chores/fetchChores', () => {
 
     it('creates FETCH_CHORES_SUCCESS when chores have been fetched', () => {
       const chores = [
-          {
-            "id": 1,
-            "description": "Swab the deck!"
-          },
-          {
-            "id": 2,
-            "description": "Prow Scuttle"
-          },
-          {
-            "id": 3,
-            "description": "Sail ho shrouds"
-          }
+          { "id": 1, "description": "Swab the deck!" },
+          { "id": 2, "description": "Prow Scuttle" }
         ]
 
-      const request = nock('http://www.example.com')
+      nock('http://localhost:8082')
         .get('/chores')
         .reply(200, chores)
 
@@ -71,6 +61,34 @@ describe('actions/chores/fetchChores', () => {
       return store.dispatch(fetchChores())
       .then(() => {
         expect(store.getActions()).to.deep.include.members(expectedActions)
+      })
+    })
+  })
+
+  describe('failure', () => {
+    it('creates FETCH_CHORES_FAILURE when fetch fails', () => {
+      nock('http://localhost:8082')
+        .get('/chores')
+        .reply(400, 'BAD REQUEST')
+
+      const expectedActions = [
+        {
+          type: ActionType.FETCH_CHORES_FAILURE,
+          payload: {
+            error: 'Oops, something went wrong.',
+            response: {
+              code: 400,
+              status: 'Bad Request'
+            }
+          }
+        }
+      ]
+
+      const store = mockStore({ chores: {} })
+
+      return store.dispatch(fetchChores())
+        .then(() => {
+          expect(store.getActions()).to.deep.include.members(expectedActions)
       })
     })
   })

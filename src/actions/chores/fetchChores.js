@@ -11,9 +11,12 @@ export function fetchChores() {
 
     return fetch(url)
       .then(response => {
-          return response.json()
-            .then(chores => dispatch(fetchChoresSuccess(chores)))
-            .catch(err => console.log(err))
+        if (response.status >= 400) {
+          return dispatch(fetchChoresFailure(response))
+        }
+        return response.json()
+          .then(chores => dispatch(fetchChoresSuccess(chores)))
+          .catch(err => console.log(err))
       })
   }
 }
@@ -29,6 +32,19 @@ export function fetchChoresSuccess(chores) {
     type: ActionType.FETCH_CHORES_SUCCESS,
     payload: {
       chores
+    }
+  }
+}
+
+export function fetchChoresFailure(response) {
+  return {
+    type: ActionType.FETCH_CHORES_FAILURE,
+    payload: {
+      error: 'Oops, something went wrong.',
+      response: {
+        code: response.status,
+        status: response.statusText
+      }
     }
   }
 }

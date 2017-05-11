@@ -10,6 +10,9 @@ export default function chores(state = INITIAL_STATE, action) {
     case ActionType.FETCH_CHORES_SUCCESS: {
       return action.payload.chores
     }
+    case ActionType.FETCH_CHORES_FAILURE: {
+      return { error: action.payload.error }
+    }
     case ActionType.CREATE_CHORE: {
       return action.payload
     }

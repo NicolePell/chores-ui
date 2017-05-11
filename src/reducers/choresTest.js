@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import choresReducer from '~/reducers/chores'
-import { fetchChoresSuccess, fetchChoresStart } from '~/actions/chores/fetchChores'
+import { fetchChoresSuccess, fetchChoresStart, fetchChoresFailure } from '~/actions/chores/fetchChores'
 import ActionType from '~/actions/types/ActionType'
 
 describe('reducers/chores', () => {
@@ -38,14 +38,26 @@ describe('reducers/chores', () => {
     })
 
     it('sets chores on FETCH_CHORES_SUCCESS action', () => {
-      const expectedChores = [
+      const EXPECTED_STATE = [
         { description: 'Swab the deck!' },
         { description: 'Sail ho shrouds' }
       ]
       
       expect(
-        choresReducer({}, fetchChoresSuccess(expectedChores))
-      ).to.deep.equal(expectedChores)
+        choresReducer({}, fetchChoresSuccess(EXPECTED_STATE))
+      ).to.deep.equal(EXPECTED_STATE)
+    })
+
+    it('sets error on chores for FETCH_CHORES_FAILURE', () => {
+      const EXPECTED_STATE = {
+        error: 'Oops, something went wrong.'
+      }
+
+      const fetchChoresFailureAction = fetchChoresFailure({ some: 'props' })
+
+      expect(
+        choresReducer({},fetchChoresFailureAction)
+      ).to.deep.equal(EXPECTED_STATE)
     })
   })
 })
