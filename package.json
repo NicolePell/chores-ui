@@ -6,7 +6,7 @@
   "scripts": {
     "start": "NODE_ENV=dev node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "start:api": "json-server --watch db.json --port 8082",
-    "test": "NODE_ENV=dev mocha --compilers js:babel-core/register --require ./test/helpers/setup.js --recursive './src/**/*Test.js*'",
+    "test": "NODE_ENV=dev mocha --compilers js:babel-core/register --require ./test/helpers/setup.js --recursive './src/**/*.test.js*'",
     "test:watch": "npm run test -- --watch"
   },
   "author": "NicolePell",
