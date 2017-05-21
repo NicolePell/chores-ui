@@ -19,10 +19,6 @@ describe('<NewChoreForm />', () => {
     expect(newChoreForm.find('.NewChoreForm__form')).to.have.length(1)
   })
 
-  it('has an "Add" button', () => {
-    expect(newChoreForm.find('.NewChoreForm__button')).to.have.text('Add')
-  })
-
   describe('using the input box', () => {
     it('renders with a property "chore" that is an empty string', () => {
       expect(newChoreForm.find('.NewChoreForm__input').get(0).props.value).to.equal('')
@@ -37,6 +33,16 @@ describe('<NewChoreForm />', () => {
       newChoreForm.find('.NewChoreForm__input').simulate('change', { target: { value: 'Hornswaggle Yellow Jack.' } })
       newChoreForm.find('.NewChoreForm__form').simulate('submit', { preventDefault() {} })
       expect(newChoreForm.find('.NewChoreForm__input')).to.have.value('')
+    })
+
+    it('does not display icons', () => {
+      newChoreForm.find('.NewChoreForm__input').simulate('change', { target: { value: 'Hornswaggle Yellow Jack.' } })
+      expect(newChoreForm.find('.NewChoreForm__icons')).to.have.length(0)
+    })
+
+    it('dislays icons on input click', () => {
+      newChoreForm.find('.NewChoreForm__input').simulate('click')
+      expect(newChoreForm.find('.NewChoreForm__icons')).to.have.length(1)
     })
   })
 })

@@ -12,10 +12,12 @@ export default class ChoresIndex extends Component {
     const { chores } = this.props
 
     return (
-      <div className="ChoresIndex">
+      <div className="ChoresIndex container">
         <h1>Your Chores</h1>
-        <NewChoreForm />
-        <ChoreList chores={chores}/>
+        <div className="ChoresContainer">
+          <NewChoreForm />
+          <ChoreList chores={chores}/>
+        </div>
       </div>
     )
   }

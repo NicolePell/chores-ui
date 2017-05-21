@@ -1,68 +1,68 @@
 @import "../../variables.scss";
 
-.ChoresIndex {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+.ChoresContainer {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .NewChoreForm {
-  background-color: white;
-  opacity: 0.8;
-  width: 80%;
-}
+  background-color: $primary-magenta;
+  padding: 20px 0;
 
-.NewChoreForm__form {
-  display: flex;
-  justify-content: center;
-  width: 90%;
-}
+  &__form {
+    display: flex;
+    justify-content: center;
+  }
 
-.NewChoreForm__input {
-  background-color: transparent;
-  border-color: transparent;
-  width: 80%;
-  resize: none;
-  font: $font-stack;
-  font-size: 0.8em;
-  padding: 5px;
-  margin: 10px;
-}
+  &__input-container {
+    width: 50%;
+    padding: 15px;
+    background-color: $primary-yellow;
+  }
 
-.NewChoreForm__input::placeholder {
-  color: gray;
-}
+  &__input {
+    background-color: transparent;
+    border-color: transparent;
+    resize: none;
+    font: $font-stack;
+    padding: 5px;
 
-.NewChoreForm__button {
-  margin: 10px;
+    &::placeholder {
+      color: gray;
+    }
+  }
+
+  &__icons {
+    margin-top: 10px;
+    padding: 0;
+
+    .fa {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+  }
 }
 
 .ChoreList {
-  background-color: white;
-  opacity: 0.8;
-  box-shadow: 0 4px 3px lightgray; 
-  width: 80%;
-}
+  &__list {
+    flex: 1 1 auto;
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+  }
 
-.ChoreList__list {
-  flex: 1 1 auto;
-  list-style: none;
-}
+  &__item {
+    background-color: $primary-blue; 
+    margin-bottom: 15px;
+    padding: 20px;
+  }
 
-.ChoreList_list-item {
-  background-color: $primary-green;
-  box-shadow: 2px 3px 2px lightgray; 
-  margin: 15px 25px 15px -5px;
-  height: 40px;
-  padding: 12px;
-}
+  &__item-checkbox {
+    display: inline-block;
+    padding: 0.5em;
+  }
 
-.ChoreList_list-item-checkbox {
-  display: inline-block;
-  padding: 0.5em;
-}
-
-.ChoreList__list-item-description {
-  display: inline-block;
+  &__item-description {
+    display: inline-block;
+  }
 }
